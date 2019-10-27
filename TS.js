@@ -24,18 +24,10 @@ var nextTrainFormatted;
 
 
 database.ref().on("child_added", function (snapshot) {
-    
-    $("table").append(
-        $('<td>').text(snapshot.val().trainName);
-        $('<td>').text(snapshot.val().destination);
-        $('<td>').text(snapshot.val().frequency);
-        $('<td>').text(snapshot.val().nextArrival);
-        $('<td>').text(snapshot.val().minTillNextTrain);
 
-        
-        
+    var data = snapshot.val()
+    $("table").append("<tr class='train' id='hello'><td>" + data.trainName + "</td><td>" + data.destination + "</td><td>" + data.frequency + "</td><td>" + data.nextArrival + "</td><td>" + data.nextTrain + "</td>></tr>")
 
-    )
 });
 
 
